@@ -7,7 +7,7 @@ import './assets/js/rem'
 import './assets/less/reset.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://192.168.90.14:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://cathyserver.xiaojiayun.top/api/private/v1/'
 axios.interceptors.request.use(config => {
   config.headers.Authorization = window.localStorage.getItem('token')
   return config

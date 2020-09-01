@@ -4,7 +4,8 @@
       <div class="left">{{note.mobile}}</div>
       <div class="rig">{{note.email}}</div>
     </div>
-    <div class="descri van-multi-ellipsis--l3">
+     <!-- van-multi-ellipsis--l3 -->
+    <div class="descri">
       {{note.username}}
     </div>
   </div>

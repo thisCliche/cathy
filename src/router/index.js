@@ -8,29 +8,31 @@ import Personal from '../views/home/Personal.vue'
 import Add from '../views/home/Add.vue'
 Vue.use(VueRouter)
 
-  const routes = [
-    {
-      path: '/',
-      redirect: '/login'
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/home',
-      name: 'Home',
-      component: Home,
-      redirect: '/note',
-      children: [
-        { path:'/note',component: Note },
-        { path:'/time',component: Time },
-        { path:'/personal',component: Personal },
-        
-      ]
-    },
-    { path:'/add',component: Add }
+const routes = [
+  {
+    path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    redirect: '/time',
+    children: [
+      {
+        path: '/note', component: Note,
+      },
+      { path: '/time', component: Time },
+      { path: '/personal', component: Personal },
+
+    ]
+  },
+  { path: '/add', component: Add }
 ]
 
 const router = new VueRouter({
@@ -41,7 +43,7 @@ import { Notify } from 'vant';
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') return next()
   const tokenStr = window.localStorage.getItem('token')
-  if(!tokenStr) {
+  if (!tokenStr) {
     Notify({
       message: '请先登录！',
       type: 'danger'

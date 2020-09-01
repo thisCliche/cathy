@@ -10,7 +10,7 @@
         :rules="[{ required: true, message: '留言不能为空' }]"
         label="留言"
         type="textarea"
-        maxlength="500"
+        maxlength="320"
         placeholder="请输入留言"
         show-word-limit
       />

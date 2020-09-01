@@ -1,10 +1,10 @@
 <template>
   <div>
     <van-cell-group>
-      <van-cell title="时间1" :value="time1" />
-      <van-cell title="时间2" :value="time2" />
-      <van-cell title="时间3" :value="time3" />
-      <van-cell title="时间4" :value="time4" />
+      <van-cell title="遇见" :value="time1" />
+      <van-cell title="相恋" :value="time2" />
+      <van-cell title="抱抱" :value="time3" />
+      <van-cell title="亲亲" :value="time4" />
     </van-cell-group>
   </div>
 </template>

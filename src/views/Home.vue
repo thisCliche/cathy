@@ -18,7 +18,7 @@ export default {
   name: '',
   data () {
     return {
-      active: 'note',
+      active: 'time',
     }
   },
 

@@ -51,10 +51,10 @@ export default {
     },
     async getNoteList() {
       const {data: res} = await this.$http.get('users',{params: this.queryInfo})
-      console.log(res)
+      // console.log(res)
       if( res.meta.status != 200 ) return this.$notify({ type: 'danger', message: '获取列表失败' })
       
-      this.noteList = res.data.users.splice(0,3);
+      this.noteList = res.data.users.slice(3)
       this.total = res.data.total;
     },
   },
@@ -65,7 +65,7 @@ export default {
     setTimeout(
       () => {
       new BScroll(this.$refs.wrapper,{click: true})
-    },500
+    },1000
     )
   },
 };

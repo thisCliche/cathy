@@ -22,7 +22,6 @@
         <van-button round block type="info" color="#d81e07" native-type="submit">登录</van-button>
       </div>
     </van-form>
-    <van-card></van-card>
   </div>
 </template>
 
