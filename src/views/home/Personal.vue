@@ -18,6 +18,7 @@ export default {
   methods: {
     signOut() {
       localStorage.removeItem('token')
+      window.sessionStorage.setItem('tabbar','time')
       this.$router.push('/login')
     }
   },

@@ -4,8 +4,8 @@
       <div class="left">{{note.mobile}}</div>
       <div class="rig">{{note.email}}</div>
     </div>
-     <!-- van-multi-ellipsis--l3 -->
-    <div class="descri">
+     <!--  -->
+    <div class="descri van-multi-ellipsis--l3">
       {{note.username}}
     </div>
   </div>
@@ -16,6 +16,7 @@ export default {
   name: 'VanCard',
   data () {
     return {
+      newData: {}
     }
   },
   props:{
@@ -25,11 +26,13 @@ export default {
   computed: {},
   methods: {
     test() {
-      console.log(1)
+      this.$router.push({path:'/edit/'+ this.note.id})
+      // console.log(this.note)
     }
   },
   created() {},
-  mounted() {},
+  mounted() {
+  },
 }
 </script>
 

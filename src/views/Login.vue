@@ -61,6 +61,7 @@ export default {
 
 <style lang="less" scoped>
 .form{
-  margin: 70% .72rem 0;
+  margin: 0 .72rem 0;
+  transform: translate(0, 100%);
 }
 </style>

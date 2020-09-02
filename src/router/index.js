@@ -6,6 +6,7 @@ import Note from '../views/home/Note.vue'
 import Time from '../views/home/Time.vue'
 import Personal from '../views/home/Personal.vue'
 import Add from '../views/home/Add.vue'
+import Edit from '../views/home/Edit.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,7 +33,8 @@ const routes = [
 
     ]
   },
-  { path: '/add', component: Add }
+  { path: '/add', component: Add },
+  { path: '/edit/:id', component: Edit }
 ]
 
 const router = new VueRouter({

@@ -27,7 +27,7 @@ export default {
         // 当前页码
         pagenum: 1,
         // 当前每页条数
-        pagesize: 10
+        pagesize: 100
       },
       noteList :[],
       total: 0,
@@ -49,24 +49,21 @@ export default {
     onClickRight() {
       this.$router.push('/add')
     },
-    async getNoteList() {
-      const {data: res} = await this.$http.get('users',{params: this.queryInfo})
-      // console.log(res)
-      if( res.meta.status != 200 ) return this.$notify({ type: 'danger', message: '获取列表失败' })
-      
-      this.noteList = res.data.users.slice(3)
-      this.total = res.data.total;
+    getNoteList() {
+      let that = this
+      this.$http.get('users',{params: this.queryInfo}).then((res)=>{
+        res = res.data
+        console.log(res)
+        if( res.meta.status != 200 ) return that.$notify({ type: 'danger', message: '获取列表失败' })
+        that.noteList = res.data.users.slice(3)
+        that.total = res.data.total
+        setTimeout(() => { new BScroll(this.$refs.wrapper,{click: true})},10)
+      })
     },
   },
   created() {},
   mounted() {
     this.getNoteList()
-    let that = this
-    setTimeout(
-      () => {
-      new BScroll(this.$refs.wrapper,{click: true})
-    },1000
-    )
   },
 };
 </script>
